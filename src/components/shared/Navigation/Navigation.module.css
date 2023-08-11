@@ -1,0 +1,39 @@
+.navbar {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoutButton{ 
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logoutButton > span{ 
+    color: white;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.logoutButton > img{ 
+   width: 40px;
+   height: 40px;
+}
+
+.navRight {
+    display: flex;
+    align-items: center;
+}
+
+.avatar{
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0077ff;
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    margin-right: 10px;
+}

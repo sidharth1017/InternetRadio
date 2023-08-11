@@ -1,0 +1,25 @@
+.errorWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+.errorWrapper span {
+    background: #1D1D1D;
+    border-radius: 13px;
+    padding: 15px;
+
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.errorWrapper span p {
+    color: red;
+    font-size: 18px;
+}
+
+.errorWrapper span button {
+    background: none;
+    outline: none;
+}
