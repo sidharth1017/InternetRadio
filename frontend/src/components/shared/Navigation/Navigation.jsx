@@ -51,7 +51,7 @@ const Navigation = () => {
           </Link>
           <button className={styles.logoutButton} onClick={logoutUser}>
             <img src="/images/logout_icon.png" alt="logout" />
-            <span>Logout</span>
+            <span>Logouttt</span>
           </button>
         </div>
       )}

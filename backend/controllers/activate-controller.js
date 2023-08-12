@@ -22,33 +22,13 @@ class ActivateController {
       imagesLink = result.secure_url;
       imagePath = imagesLink;
     }   else {
-      imagePath = "http://localhost:5500/storage/monkey-img.png";
+      imagePath = `${process.env.BASE_URL}/storage/monkey-img.png`;
     }
 
     if (!name) {
       res.status(400).json({ message: "All fields are required" });
     }
-
-    // let imagePath;
-    // if (avatar) {
-    //   const buffer = Buffer.from(
-    //     avatar.replace(/^data:image\/(png|jpg|jpeg|webp);base64,/, ""),
-    //     "base64"
-    //   );
-    //   imagePath = `${Date.now()}-${Math.round(Math.random() * 1e9)}.png`;
-
-    //   try {
-    //     const jimResp = await Jimp.read(buffer);
-    //     jimResp
-    //       .resize(150, Jimp.AUTO)
-    //       .write(path.resolve(__dirname, `../storage/${imagePath}`));
-    //   } catch (err) {
-    //     res.status(500).json({ message: "Could not process the image" });
-    //   }
-    // } else {
-    //     imagePath = "monkey-img.png";
-    // }
-
+    
     const userId = req.user._id;
 
     try {
