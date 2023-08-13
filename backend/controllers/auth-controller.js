@@ -30,7 +30,7 @@ class AuthController {
                 hash: `${hash}.${expires}`,
                 phone,
                 email,
-                otp
+                // otp
             })
         }
         catch(err){
