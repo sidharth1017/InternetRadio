@@ -10,7 +10,7 @@ class AuthController {
         const phoneEmail = phone || email;
 
         if(!phoneEmail){
-            res.status(400).json({message: 'Phone no. or email is required!'})
+            return res.status(400).json({message: 'Phone no. or email is required!'})
         }
 
         const otp = await otpService.generateOtp();     
@@ -26,16 +26,15 @@ class AuthController {
                 // await otpService.sendBySms(phone, otp);
             }
 
-            res.status(200).json({
+            return res.status(200).json({
                 hash: `${hash}.${expires}`,
                 phone,
                 email,
-                // otp
             })
         }
         catch(err){
             console.log(err);
-            res.status(500).json({message: 'Message sending failed'})
+            return res.status(500).json({message: 'Message sending failed'})
         }
 
         // res.json({hash:hash});

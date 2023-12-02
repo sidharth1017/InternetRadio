@@ -37,3 +37,19 @@
     width: 70%;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 767px) {
+    .buttonWrapper button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .buttonWrapper button:nth-child(1) img {
+        width: 25px;
+        padding-top: 5px;
+    }
+
+    .buttonWrapper button img {
+        width: 15px;
+    }
+}

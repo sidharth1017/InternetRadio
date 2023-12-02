@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Room.module.css";
 import { getRoom, deleteRoom } from "../../http";
+import WaveAnimation from "../../components/shared/WaveAnimation/WaveAnimation";
 
 const Room = () => {
   const { id: roomId } = useParams();
@@ -12,6 +13,7 @@ const Room = () => {
   const navigate = useNavigate();
   const [room, setRoom] = useState(null);
   const [isMute, setMute] = useState(true);
+  const [isWave, setWave] = useState(false);
 
 
   const handleEndRoomClick = async () => {
@@ -48,9 +50,19 @@ const Room = () => {
     setMute((isMute) => !isMute);
   };
 
+  const wave = () => {
+    setWave(true);
+    setTimeout(() => {
+      setWave(false);
+    }, 1000);
+  };
+
   return (
     <div>
       <div className="container">
+      {isWave && (
+        <WaveAnimation />
+      )}
         <button onClick={handleManualLeave} className={styles.goBack}>
           <img src="/images/Left_arrow.png" alt="arrow-left" />
           <span>All voice rooms</span>
@@ -60,7 +72,7 @@ const Room = () => {
         <div className={styles.header}>
           <h2 className={styles.topic}>{room?.topic}</h2>
           <div className={styles.actions}>
-            <button className={styles.actionBtn}>
+            <button className={styles.actionBtn} onClick={wave}>
               <img src="/images/Left_hand.png" alt="palm-icon" />
             </button>
             <button onClick={handleManualLeave} className={styles.actionBtn}>

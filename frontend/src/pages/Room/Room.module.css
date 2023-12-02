@@ -134,3 +134,49 @@
 .micBtn img {
     width: 30px;
 }
+
+@media only screen and (max-width: 767px) {
+    .goBack span {
+        font-size: 12px;
+    }
+
+    .goBack img {
+        width: 15%;
+    }
+
+    .topic {
+        font-size: 14px;
+    }
+
+    .actionBtn span {
+        font-size: 10px;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .actions {
+        margin-top: 10px;
+    }
+
+    .actions .actionBtn {
+        font-size: 10px;
+    }
+
+    .clientsWrap {
+        margin-top: 53px;
+    }
+
+    .clientsList .client .userHead {
+        width: 70px;
+        height: 70px;
+    }
+
+    .micBtn {
+        width: 22px;
+        height: 22px;
+    }
+}

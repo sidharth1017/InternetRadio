@@ -102,3 +102,18 @@
     top: 8px;
     background: none;
 }
+
+@media only screen and (max-width: 767px) {    
+    .modalBody{ 
+        width: 90%;
+    }
+    .heading, .subHeading, .modalFooter h2 {
+        font-size: 14px;
+    }
+    .roomTypes span {
+        font-size: 12px;
+    }
+    .modalHeader input {
+        font-size: 12px;
+    }
+}

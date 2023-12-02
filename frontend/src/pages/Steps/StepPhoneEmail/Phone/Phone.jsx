@@ -12,6 +12,7 @@ import Error from '../../../../components/shared/Error/Error';
 const Phone = ({onNext}) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [showWarning, setShowWarning] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   const dispatch = useDispatch();
  
@@ -27,16 +28,21 @@ const Phone = ({onNext}) => {
     onNext();
   }
 
+  const handleClick = () => {
+    setShowMessage(true);
+  };
+
   return (
     <Card title="Enter your phone number" icon="phone_emoji">
       { showWarning && <Error text="Please enter your phone number !!" onClose={() => setShowWarning(false)}/>}
+      { showMessage && <Error text="Please use email option to login !!" onClose={() => setShowMessage(false)}/>}
       
       <TextInput value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
       
       <div>
 
       <div>
-        <Button btntext="Next" onClick={submit} />
+        <Button btntext="Next" onClick={handleClick} />
       </div>
 
       <div>

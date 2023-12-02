@@ -8,6 +8,13 @@ const cookieParser = require("cookie-parser");
 const server = require("http").createServer(app);
 const ACTIONS = require("./actions");
 
+const corsOptions = {
+  origin: process.env.FRONT_URL, 
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
 const io = require("socket.io")(server, {
   cors: {
     origin: process.env.FRONT_URL,
@@ -17,11 +24,6 @@ const io = require("socket.io")(server, {
 
 app.use(cookieParser());
 
-const corsOption = {
-  credentials: true,
-  origin: [process.env.FRONT_URL],
-};
-app.use(cors(corsOption));
 app.use("/storage", express.static("storage"));
 
 const PORT = process.env.PORT || 5500;

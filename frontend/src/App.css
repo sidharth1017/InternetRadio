@@ -56,3 +56,9 @@ button{
     cursor: pointer;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 767px) {
+    .container {
+        
+    }
+}

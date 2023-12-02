@@ -37,3 +37,33 @@
     margin: 0 20px;
     margin-right: 10px;
 }
+
+@media only screen and (max-width: 767px) {
+    .navbar span {
+        font-size: 12px;
+        padding-top: 5px;
+    }   
+
+    .navbar link img {
+        width: 10px;
+    }
+    
+    .navbar .navRight img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navRight h3 {
+        font-size: 12px;
+    }
+
+    .logoutButton span {
+        display: none;
+    }
+
+    .logoutButton img {
+        width: 25px;
+        height: 25px;
+        margin-top: -5px;
+    }
+}

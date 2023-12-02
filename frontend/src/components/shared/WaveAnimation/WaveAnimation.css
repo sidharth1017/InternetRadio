@@ -1,0 +1,57 @@
+.helloImg img {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: 100px;
+  /* height: auto; */
+  cursor: pointer;
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  /* Change to speed up or slow down */
+  animation-iteration-count: infinite;
+  /* Never stop waving :) */
+  transform-origin: 70% 70%;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  /* five values can be played with to make the waving more or less */
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+    /* Add smooth transition for the last part */
+  90% {
+    transform: rotate(2deg);
+  }
+
+  /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
+  }
+}
